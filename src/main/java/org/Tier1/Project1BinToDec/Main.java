@@ -16,20 +16,25 @@ public class Main {
 
         System.out.println(calculateDecimal(binary));
 
-
     }
 
 
     public static int calculateDecimal(String binary) {
-        String aux2 = binary;
-        Integer number = 0;
+        String aux = binary;
+        int number = 0;
 
-        while (aux2.length() < 8 && aux2.length() > 1) {
-            aux2 = aux2.substring(0, aux2.length() - 1);
-            Integer c = Integer.parseInt(aux2);
+        System.out.println("Input: " + binary);
 
-            number += c * (2 * aux2.length());
+        while (!aux.isEmpty()) {
+            char lastChar = aux.charAt(aux.length() - 1);
+            int position = binary.length() - aux.length();
 
+            if (Character.digit(lastChar, 10) == 1) {
+                number += (int) Math.pow(2, position);
+            }
+
+            aux = aux.substring(0, aux.length() - 1);  // Always remove last char
+            System.out.println("char: " + lastChar + ", pos: " + position);
         }
 
 
