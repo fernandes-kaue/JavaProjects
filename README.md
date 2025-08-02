@@ -1,1 +1,1 @@
-project to share personal projects and base projects
+repository to share personal projects and base projects
