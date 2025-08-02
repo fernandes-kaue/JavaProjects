@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Main {
     static Scanner sc = new Scanner(System.in);
 
-    public void Main(String[] args) {
+    public static void main(String[] args) {
 
         System.out.println("Please inform a binary number: (max is 8 digits)");
         String binary = sc.nextLine();
@@ -20,17 +20,16 @@ public class Main {
     }
 
 
-    public int calculateDecimal(String binary) {
+    public static int calculateDecimal(String binary) {
         String aux2 =  binary;
         Integer number = 0;
 
-        while (aux2.length() < 8 && aux2.length() >= 0) {
-            int length = aux2.length()-1;
-            char c = aux2.charAt(length-1);
+        while (aux2.length() < 8 && aux2.length() > 1) {
+            aux2 = aux2.substring(0, aux2.length()-1);
+            Integer c = Integer.parseInt(aux2);
 
-            number += c*(2*length);
+            number += c*(2*aux2.length());
 
-            length = length--;
         }
 
 
