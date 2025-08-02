@@ -14,8 +14,27 @@ public class Main {
             System.err.println("The given binary number is too big");
         }
 
+        System.out.println(calculateDecimal(binary));
 
 
+    }
+
+
+    public int calculateDecimal(String binary) {
+        String aux2 =  binary;
+        Integer number = 0;
+
+        while (aux2.length() < 8 && aux2.length() >= 0) {
+            int length = aux2.length()-1;
+            char c = aux2.charAt(length-1);
+
+            number += c*(2*length);
+
+            length = length--;
+        }
+
+
+        return number;
     }
 
 }
