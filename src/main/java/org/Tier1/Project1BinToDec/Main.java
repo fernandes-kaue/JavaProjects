@@ -21,14 +21,14 @@ public class Main {
 
 
     public static int calculateDecimal(String binary) {
-        String aux2 =  binary;
+        String aux2 = binary;
         Integer number = 0;
 
         while (aux2.length() < 8 && aux2.length() > 1) {
-            aux2 = aux2.substring(0, aux2.length()-1);
+            aux2 = aux2.substring(0, aux2.length() - 1);
             Integer c = Integer.parseInt(aux2);
 
-            number += c*(2*aux2.length());
+            number += c * (2 * aux2.length());
 
         }
 
